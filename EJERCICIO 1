@@ -1,18 +1,19 @@
+import math
 class romano():
     def __init__(self,num):
-        self.num = str(num)
+        self.num = (num)
         self.num_rom = ""
-import math
-Unidad=["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
-Decena=["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
-Centena=["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
-Mil=["", "M", "MM"]
-N=int(input("Ingresa numero entero\n"))
-u= N % 10
-d=int(math.floor(N/10))%10
-c=int(math.floor(N/100))%10
-m=int(math.floor(N/1000))
-if(N >= 1 and N <= 2000): 
-  print(Mil[m]+Centena[c]+Decena[d]+Unidad[u])
-else:
-  print("No puede ser convertido")
+    def romanizar(self):
+        Unidad=["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+        Decena=["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+        Centena=["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+        Mil=["", "M", "MM"]
+        u= self.num % 10
+        d=int(math.floor(self.num/10))%10
+        c=int(math.floor(self.num/100))%10
+        m=int(math.floor(self.num/1000))
+        if(self.num >= 1 and self.num <= 2000): 
+            print(Mil[m]+Centena[c]+Decena[d]+Unidad[u])
+
+ejecutar = romano(29)
+ejecutar.romanizar()
